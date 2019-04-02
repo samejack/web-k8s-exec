@@ -1,0 +1,30 @@
+{
+  "name": "xterm.js-next",
+  "description": "Full xterm terminal, in your browser. Provides builds of xterm.js>=3.",
+  "main": [
+    "xterm.js",
+    "xterm.css"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "xterm",
+    "terminal",
+    "tty",
+    "console"
+  ],
+  "homepage": "https://xtermjs.org/",
+  "ignore": [],
+  "authors": [
+    "Paweł Golonko <pgolonko@gmail.com>"
+  ],
+  "version": "3.2.0",
+  "_release": "3.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.2.0",
+    "commit": "9b8500a598afa16144af3a9314ff1bc67e711d66"
+  },
+  "_source": "https://github.com/Greenek/bower-xterm.js.git",
+  "_target": "^3.1.0",
+  "_originalSource": "xterm.js-next"
+}

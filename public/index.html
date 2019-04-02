@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keyword" content="">
+    <title>K8S Exec Console</title>
+
+    <link rel="stylesheet" href="bower_components/patternfly/dist/css/patternfly.css">
+    <link rel="stylesheet" href="bower_components/patternfly/dist/css/patternfly-additions.css">
+    <link rel="stylesheet" href="bower_components/xterm.js-next/xterm.css">
+    <link rel="stylesheet" href="bower_components/kubernetes-container-terminal/dist/container-terminal.css" />
+</head>
+<body>
+
+    <div ng-app="k8sTerminal">
+        <kubernetes-container-terminal pod="selfLink" container="containerName" prevent="preventSocket" rows="rows" cols="cols"  screen-keys="true" autofocus="true">
+        </kubernetes-container-terminal>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/xterm.js-next/xterm.js"></script>
+    <script src="bower_components/kubernetes-container-terminal/dist/container-terminal.js"></script>
+
+    <script type="text/javascript">
+        angular.module('k8sTerminal', ['kubernetesUI'])
+            .config(function(kubernetesContainerSocketProvider) {
+                kubernetesContainerSocketProvider.WebSocketFactory = "CustomWebSockets";
+            })
+            .run(function($rootScope) {
+                $rootScope.baseUrl = "ws://localhost:8080";
+                $rootScope.selfLink = "/";
+                $rootScope.preventSocket = true;
+            })
+            /* Our custom WebSocket factory adapts the url */
+            .factory("CustomWebSockets", function($rootScope) {
+                return function CustomWebSocket(url, protocols) {
+                    url = $rootScope.baseUrl + url;
+                    return new WebSocket('ws://localhost:8080/', 'echo-protocol');
+                };
+            });
+    </script>
+
+</body>

@@ -1,0 +1,30 @@
+{
+  "name": "web-k8s-exec",
+  "version": "1.0.0",
+  "description": "Kubernetes\t Exec Terminal WebSocket Implement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samejack/web-k8s-exec.git"
+  },
+  "keywords": [
+    "Kubernetes",
+    "Exec",
+    "Terminal",
+    "websocket"
+  ],
+  "author": "SJ Chou",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/samejack/web-k8s-exec/issues"
+  },
+  "homepage": "https://github.com/samejack/web-k8s-exec#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "websocket": "^1.0.28",
+    "ws": "^6.2.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "xterm.js-next",
+  "description": "Full xterm terminal, in your browser. Provides builds of xterm.js>=3.",
+  "main": [
+    "xterm.js",
+    "xterm.css"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "xterm",
+    "terminal",
+    "tty",
+    "console"
+  ],
+  "homepage": "https://xtermjs.org/",
+  "ignore": [],
+  "authors": [
+    "Paweł Golonko <pgolonko@gmail.com>"
+  ]
+}
